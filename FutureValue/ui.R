@@ -27,10 +27,10 @@ fluidPage(
              h3("Annual Investment"),
              p("Numeric field to provide the annual contributions on top of the initial investment."),
              h2("Outputs"),
-             h3("Future Value"),
-             p("The future value of the investment is calculated and displayed beneath the inputs."),
              h3("Plot"),
-             p("Plot the future value of the investment at the given rate of return considering contributions for 50 years. Useful to see 'what if' scenarios.")
+             p("Plot the future value of the investment at the given rate of return considering contributions for 50 years. Useful to see 'what if' scenarios."),
+             h3("Future Value"),
+             p("The future value of the investment is calculated and displayed along with the percentage (and amount) of the investment after the period that is attributed to Interest.")
     ),
     tabPanel("ROI Calculator",
              sidebarLayout(
@@ -42,14 +42,20 @@ fluidPage(
                  sliderInput(inputId = "num", label = "Number of Years",
                              value = 10, min = 0, max = 50, step = 1, ticks = 1),
                  numericInput(inputId = "contrib", label = "Annual Investments",
-                              min = 0, value = 10),
-                 HTML("<center>"),
-                 strong(textOutput("fv_intro")),
-                 h3(strong(textOutput("fv"))),
-                 HTML("</center>")
+                              min = 0, value = 10)
                ),
                mainPanel(
-                 plotlyOutput("rtn_plot")
+                 plotlyOutput("rtn_plot"),
+                 fluidRow(
+                   HTML("<center>"),
+                   h3(textOutput("fv")),
+                   HTML("</center>")
+                 ),
+                 fluidRow(
+                   HTML("<center>"),
+                   h3(textOutput("roi")),
+                   HTML("</center>")
+                 )
                )
              )
              

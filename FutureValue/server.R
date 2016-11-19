@@ -48,7 +48,7 @@ function(input, output) {
     
     y = round(y, 2)
     
-    plot_ly(x = x, y = y, mode = "lines") %>%
+    plot_ly(x = x, y = y, type = "scatter", mode = "lines") %>%
       layout(title = paste("Time Value of Investment (Rate =", input$rate, "%)"),
              xaxis = list(title = "Years"),
              yaxis = list (title = "Value of Investment"))

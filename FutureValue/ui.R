@@ -45,7 +45,6 @@ fluidPage(
                               min = 0, value = 10)
                ),
                mainPanel(
-                 plotlyOutput("rtn_plot"),
                  fluidRow(
                    HTML("<center>"),
                    h3(textOutput("fv")),
@@ -55,6 +54,9 @@ fluidPage(
                    HTML("<center>"),
                    h3(textOutput("roi")),
                    HTML("</center>")
+                 ),
+                 fluidRow(
+                   plotlyOutput("rtn_plot")
                  )
                )
              )

@@ -4,7 +4,6 @@ author      : "Bill Martersteck"
 date        : "11/19/2016"
 mode        : selfcontained
 framework   : io2012
-widgets     : [shiny]
 ---
 
 # What is the ROI Calculator?
@@ -40,7 +39,20 @@ how much your investments grow and how much you put in versus what you get out.
 
 
 
+The ROI Calculator takes 4 inputs:
 
-```
-## Error in eval(expr, envir, enclos): could not find function "ShinyApp"
-```
+- Initial Investment Amount
+- Expected Rate of Return
+- Number of Years of Investment
+- Annual Contributions Each Year of Investment
+
+Generated is the value of the investment after the period and the
+percentage generated from growth versus contributions. Also, a plot of that investment scenario over 50 years is shown.
+
+---
+
+# ROI Calculator Output
+
+Displayed is the percentage of the final value that was generated from the return on investment (as opposed to contributed) and a plot like:
+
+<img src="figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />

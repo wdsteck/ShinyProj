@@ -4,6 +4,7 @@ author      : "Bill Martersteck"
 date        : "11/19/2016"
 mode        : selfcontained
 framework   : io2012
+widgets     : [shiny]
 ---
 
 # What is the ROI Calculator?
@@ -32,3 +33,14 @@ how much your investments grow and how much you put in versus what you get out.
 - Greater rate of return leads to a larger pile at the end, but as rate of return increases, so does risk. General rule is to take more risk early and reduce as you get closer to needing to use the investment.
 
 - Web based tool can be found at: https://wdsteck.shinyapps.io/FutureValue/
+
+---
+
+# ROI Calculator Inputs:
+
+
+
+
+```
+## Error in eval(expr, envir, enclos): could not find function "ShinyApp"
+```

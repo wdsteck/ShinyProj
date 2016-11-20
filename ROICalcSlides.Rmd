@@ -1,9 +1,9 @@
 ---
-title: "Usefulness of the ROI Calculator"
-author: "Bill Martersteck"
-date: "11/19/2016"
-output: slidy_presentation
-runtime: shiny
+title       : "Usefulness of the ROI Calculator"
+author      : "Bill Martersteck"
+date        : "11/19/2016"
+mode        : selfcontained
+framework   : io2012
 ---
 
 # What is the ROI Calculator?
@@ -41,6 +41,8 @@ how much your investments grow and how much you put in versus what you get out.
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(FinCal)
 library(plotly)
+library(shiny)
+
 ```
 
 ```{r}

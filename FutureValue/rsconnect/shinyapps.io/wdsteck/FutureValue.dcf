@@ -2,9 +2,9 @@ name: FutureValue
 title: FutureValue
 account: wdsteck
 server: shinyapps.io
-appId: 138661
-bundleId: 619867
+appId: 138770
+bundleId: 619871
 url: https://wdsteck.shinyapps.io/FutureValue/
-when: 1479645747.7089
+when: 1479646011.10757
 asMultiple: FALSE
 asStatic: FALSE

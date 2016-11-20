@@ -1,0 +1,83 @@
+---
+title: "Usefulness of the ROI Calculator"
+author: "Bill Martersteck"
+date: "11/19/2016"
+output: slidy_presentation
+runtime: shiny
+---
+
+# What is the ROI Calculator?
+
+- Preparing for your financial future requires understanding your goals
+and then predicting
+how your investments will meet those goals.
+
+- This simple calculator lets you alter 4 inputs
+and then projects into the future
+to see how those inputs will influence the results.
+
+- This is a simple tool. More complex models are available
+that allow more customization.
+
+---
+
+# Why is this important?
+
+- Everyone needs to take greater responsibility for their
+financial well being in their later years. Several factors influence
+how much your investments grow and how much you put in versus what you get out.
+
+- Since money in an investment is compounded, the longer your money has to grow, the more you will have when you need it. Start investing early.
+
+- Greater rate of return leads to a larger pile at the end, but as rate of return increases, so does risk. General rule is to take more risk early and reduce as you get closer to needing to use the investment.
+
+- Web based tool can be found at: 
+
+---
+
+# ROI Calculator Inputs:
+
+```{r setup, include=FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(FinCal)
+library(plotly)
+```
+
+```{r}
+numericInput(inputId = "presVal", label = "Initial Investment", value = 100, min = 0)
+
+sliderInput(inputId = "rate", label = "Annual Rate of Return (%)", value = 5, min=0, max=20, step = .5, ticks = 1)
+
+sliderInput(inputId = "num", label = "Number of Years", value = 10, min = 0, max = 50, step = 1, ticks = 1)
+
+numericInput(inputId = "contrib", label = "Annual Investments", min = 0, value = 10)
+```
+
+---
+
+# Plot of the Return on the Investment: 
+
+```{r, fig.align='center'}
+
+renderPlotly({
+    x = 1:50
+if (input$rate == 0) {
+      y = input$presVal + input$contrib * x
+}
+else {
+  y = -fv(r = input$rate/100,
+              pv = input$presVal,
+              pmt = input$contrib,
+              n = 1:50,
+              type = 0)
+}
+    
+y = round(y, 2)
+    
+plot_ly(x = x, y = y, type = "scatter", mode = "lines") %>%
+      layout(title = paste("Time Value of Investment (Rate =", input$rate, "%)"),
+             xaxis = list(title = "Years"),
+             yaxis = list (title = "Value of Investment"))
+    
+})
+```

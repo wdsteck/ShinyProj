@@ -35,7 +35,7 @@ fluidPage(
     tabPanel("ROI Calculator",
              sidebarLayout(
                sidebarPanel(
-                 numericInput(inputId = "presVal", label = "Present Value",
+                 numericInput(inputId = "presVal", label = "Initial Investment",
                               value = 100, min = 0),
                  sliderInput(inputId = "rate", label = "Annual Rate of Return (%)",
                              value = 5, min=0, max=20, step = .5, ticks = 1),
